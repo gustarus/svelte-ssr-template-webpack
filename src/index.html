@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <style>
+      #indicator {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1100;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      #indicator-content {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+
+      #indicator-content:after {
+        width: 30px;
+        height: 30px;
+        content: ' ';
+        display: block;
+        margin: 1px;
+        border-radius: 50%;
+        border-style: solid;
+        -webkit-animation: indicator-rotate 0.7s linear infinite;
+        animation: indicator-rotate 0.7s linear infinite;
+        border-width: 1px;
+        border-color: #4285f4 transparent;
+      }
+
+      @keyframes indicator-rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <div id="indicator">
+        <div id="indicator-content"></div>
+      </div>
+    </div>
+  </body>
+</html>
