@@ -55,6 +55,6 @@
     "qs": "^6.9.3",
     "svelte": "^3.21.0",
     "svelte-routing": "^1.4.2",
-    "svelte-ssr": "^0.0.20"
+    "svelte-ssr": "^0.0.22"
   }
 }

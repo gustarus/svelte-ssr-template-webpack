@@ -1,5 +1,4 @@
 import path from 'path';
-import yargs from 'yargs';
 import {
   createCatchMiddleware,
   createRedirectMiddleware,
@@ -18,7 +17,7 @@ configure();
 const app = createServer();
 
 // resolve command line arguments
-const { host, port, base, staticProxyPort, staticPathToDirectory } = resolveCommandOptions();
+const { port, base, staticProxyPort, staticPathToDirectory } = resolveCommandOptions();
 
 // define additional component props
 const componentProps = { entry: 'node', nodePort: port };
@@ -50,4 +49,4 @@ app.use(createRedirectMiddleware({ base, verbose: true }));
 app.use(createCatchMiddleware({ verbose: true }));
 
 // listen desired port by the server
-app.listen(port, host, () => console.log(`Server is ready on ':${port}'`));
+app.listen(port, () => console.log(`Server is ready on ':${port}'`));
