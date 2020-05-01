@@ -2,8 +2,6 @@
 This template has been built specially for demonstration of cooperation between [svelte](https://github.com/sveltejs/svelte), [svelte-ssr](https://github.com/gustarus/svelte-ssr) and [webpack](https://github.com/webpack/webpack) to perform server side rendering requests.
 This is like [sapper](https://github.com/sveltejs/sapper) but not (🤷‍♀️).
 
-![screenshot](docs/screenshot.png)
-
 ## How to install it
 **1. Clone the repository**
 ```bash
