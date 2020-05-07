@@ -38,6 +38,7 @@ app.use(createRenderMiddleware({
   preload,
   pathToTemplate,
   targetSelector,
+  removeWhitespace: true,
   verbose: true,
   debug: true
 }));
