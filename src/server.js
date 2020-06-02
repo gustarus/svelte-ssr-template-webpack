@@ -1,9 +1,12 @@
 import path from 'path';
 import {
+  cleanServerInstanceOnExit,
   createCatchMiddleware,
+  createMatchMiddleware,
   createRedirectMiddleware,
   createRenderMiddleware,
   createServer,
+  createServerInstance,
   createStaticMiddleware,
   resolveCommandOptions
 } from 'svelte-ssr/server';
@@ -21,6 +24,13 @@ const { port, base, staticProxyPort, staticPathToDirectory } = resolveCommandOpt
 
 // define additional component props
 const componentProps = { entry: 'node', nodePort: port };
+
+
+// mock custom server request to show the ability of matching with custom routes with base folder
+app.use(createMatchMiddleware({ base, match: '/sitemap.xml', verbose: true }, (req, res) => {
+  res.header('Content-Type', 'application/xml');
+  res.send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>')
+}));
 
 // serve static content with the magic middleware
 // if both development severs are running - this middleware
@@ -49,5 +59,6 @@ app.use(createRedirectMiddleware({ base, verbose: true }));
 // log into console all errors
 app.use(createCatchMiddleware({ verbose: true }));
 
-// listen desired port by the server
-app.listen(port, () => console.log(`Server is ready on ':${port}'`));
+// listen desired port by the server and clean server instance on node application exit event
+const instance = createServerInstance(app, port, () => console.log(`Server is ready on ':${port}'`));
+cleanServerInstanceOnExit(instance);
