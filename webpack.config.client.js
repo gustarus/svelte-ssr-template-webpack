@@ -71,6 +71,7 @@ const config = production => createWebpackClientConfig({
     }),
 
     new HtmlWebpackPlugin({
+      base: base,
       inject: true,
       template: path.resolve(__dirname, 'src', 'index.html')
     })

@@ -1,6 +1,6 @@
 {
   "name": "svelte-ssr-template-webpack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Svelte server side rendering tool webpack template",
   "private": true,
   "scripts": {
@@ -55,6 +55,6 @@
     "qs": "^6.9.3",
     "svelte": "^3.21.0",
     "svelte-routing": "^1.4.2",
-    "svelte-ssr": "^0.0.27"
+    "svelte-ssr": "^0.0.28"
   }
 }
