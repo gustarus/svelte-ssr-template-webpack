@@ -52,7 +52,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
-    "qs": "^6.9.3",
+    "qs": "^6.9.7",
     "svelte": "^3.21.0",
     "svelte-routing": "^1.4.2",
     "svelte-ssr": "^0.0.28"
